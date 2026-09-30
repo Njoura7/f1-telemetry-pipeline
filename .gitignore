@@ -1,0 +1,28 @@
+# Environment
+.env
+*.env.local
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# dbt
+transform/dbt/target/
+transform/dbt/dbt_packages/
+transform/dbt/logs/
+transform/dbt/profiles.yml
+
+# Airflow / Astro
+dags/.astro/
+dags/airflow_settings.yaml
+dags/logs/
+
+# FastF1 cache
+.fastf1_cache/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

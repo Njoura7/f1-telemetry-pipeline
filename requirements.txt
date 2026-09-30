@@ -1,0 +1,25 @@
+# Ingestion & transform
+fastf1>=3.8
+pandas>=2.1
+
+# Warehouse
+dbt-core>=1.9
+dbt-snowflake>=1.9
+snowflake-connector-python>=3.12
+
+# Orchestration (Astro CLI manages the Airflow image itself — this is for
+# writing/testing DAG code locally outside the Astro container if needed)
+apache-airflow>=2.10
+
+# MCP server
+# The SDK is mid-transition between a v1 and v2 API as of this writing.
+# Pin the major version deliberately once you've picked which API to build
+# against — see https://py.sdk.modelcontextprotocol.io before installing.
+mcp[cli]>=1.28,<2
+
+# Dashboard
+streamlit>=1.38
+plotly>=5.24
+
+# Env handling
+python-dotenv>=1.0
