@@ -137,7 +137,6 @@ class SnowflakeLoader:
 
     def __init__(self, config: SnowflakeConfig) -> None:
         self.config = config
-        self._connection: sf.SnowflakeConnection | None = None
 
     # -- connection lifecycle ------------------------------------------
 
