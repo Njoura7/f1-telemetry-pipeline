@@ -2,6 +2,10 @@
 .env
 *.env.local
 
+# Snowflake key-pair auth -- never commit private keys
+*.p8
+rsa_key*
+
 # Python
 __pycache__/
 *.pyc
