@@ -27,6 +27,14 @@ Useful flags:
 | `--telemetry-lap-limit N` | Telemetry for only the first `N` on-track laps (chronological). For quick iteration. |
 | `--log-level DEBUG` | Verbose FastF1 logging. |
 
+> **Careful with `--telemetry-lap-limit` and `--no-telemetry` against a real
+> warehouse.** The load is scoped to the whole session, so a limited run
+> *replaces* a previously complete session with a partial one rather than
+> adding to it. That is what makes re-runs idempotent, but it means a
+> throwaway `--telemetry-lap-limit 3` run will wipe the full telemetry for
+> that session. Re-run without the flag to restore. The DAG never passes
+> these flags, so it always loads the full session.
+
 The session can be given as a code (`FP1`, `FP2`, `FP3`, `Q`, `Q1`, `Q2`,
 `Q3`, `Sprint`, `R`) or a display name (`Practice 3`).
 
